@@ -21,12 +21,9 @@ const vinaysai = async()=>{
     await loans.bulkCreate(loansData);
     await reservations.bulkCreate(reservationsData);
     console.log("data inserted sucessfully");
-        const allLoans = await loans.findAll();
-        // Transform Sequelize instances to plain objects
-        const loansData = allLoans.map(loan => loan.toJSON());
-       // Log the contents to the console in table format
-        console.log("Loans Table Contents:");
-        console.log(loansData);
+      const allLoans = await loans.findAll();
+       console.log("Loans Table Contents:");
+       console.table(allLoans.map(loan => loan.toJSON()))
 }
 catch (error) {
   console.error('Unable to connect to the database:', error);
