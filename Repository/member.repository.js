@@ -3,10 +3,10 @@ const { where } = require('sequelize');
 const members = require('../Models/Members');
 // const {authorsData} = require('../Data');
 const membersData1 = {
-    name: 'Jane Smith',
-     address: '456 Oak Ave, Another Town',
-      phone_number: 555-5678,
-       email: 'jane.smith@example.com' 
+    name: 'Rama krishna',
+     address: 'Warangal',
+      phone_number: 1111122222,
+       email: 'ramakrishna@gmail.com' 
 }
 const create  =  async()=>{
     try{
@@ -36,10 +36,10 @@ const read  =  async()=>{
     }
 };
 const new_details = {
-    name: 'Jane Smith',
-     address: '456 Oak Ave, Another Town',
-      phone_number: 555-5678,
-       email: 'jane.smith@example.com' 
+    name: 'Vijay',
+     address: 'vallapur',
+      phone_number: 999999999,
+       email: 'vijay@gmail.com' 
 }
 
 const update = async () => {

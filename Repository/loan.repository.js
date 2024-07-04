@@ -4,9 +4,9 @@ const loans = require('../Models/Loans');
 // const {authorsData} = require('../Data');
 const loansData1 = {
     member_id: 1, 
-    book_id: 1, 
+    book_id: 3, 
     loan_date: new Date(), 
-    due_date: new Date('2024-07-15')
+    due_date: new Date('2024-07-16')
 }
 
 const create  =  async()=>{
@@ -37,10 +37,10 @@ const read  =  async()=>{
     }
 };
 const new_details = {
-    member_id: 1, 
-    book_id: 1, 
+    member_id: 2, 
+    book_id: 4, 
     loan_date: new Date(), 
-    due_date: new Date('2024-07-15')
+    due_date: new Date('2024-07-18')
 }
 const update = async () => {
     try {
