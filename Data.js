@@ -6,10 +6,10 @@ const authorsData=[
 
 ]
 const booksData = [
-    { id:1,title: 'Harry Potter and the Philosopher\'s Stone', authorId: 1, genre: 'Fantasy', isbn: '9780747532743', publication_year: '1997' },
-    {id:2, title: 'Wonderfull day', authorId: 2, genre: 'Dystopian Fiction', isbn: '9780451524935', publication_year: '1949' },
-    { id:3,title: 'Norwegian Wood', authorId: 3, genre: 'Fiction', isbn: '9780375704024', publication_year: '1987' },
-    { id:4,title: 'One Hundred Years of Solitude', authorId: 4, genre: 'Magical Realism', isbn: '9780060883287', publication_year: '1967' }
+    { titles: 'Harry Potter and the Philosophers Stone', authorId: 1, genre: 'Fantasy', isbn: '9780747532743', publication_year: '1997' },
+    { titles: 'Wonderfull day', authorId: 2, genre: 'Dystopian Fiction', isbn: '9780451524935', publication_year: '1949' },
+    { titles: 'Norwegian Wood', authorId: 3, genre: 'Fiction', isbn: '9780375704024', publication_year: '1987' },
+    { titles: 'One Hundred Years of Solitude', authorId: 4, genre: 'Magical Realism', isbn: '9780060883287', publication_year: '1967' }
   ];
   
   

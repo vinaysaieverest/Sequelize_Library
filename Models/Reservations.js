@@ -37,4 +37,9 @@ const Reservation  = sequelize.define('reservation', {
     
 
 })
+books.hasMany(Reservation, { foreignKey: 'book_id' });
+Reservation.belongsTo(books, { foreignKey: 'book_id' });
+
+members.hasMany(Reservation, { foreignKey: 'member_id' });
+Reservation.belongsTo(members, { foreignKey: 'member_id' });
 module.exports = Reservation;

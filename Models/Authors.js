@@ -1,4 +1,5 @@
 
+const { uniq } = require('lodash');
 const sequelize = require('../dbConfiguration');
 const {DataTypes} = require('sequelize');
 
@@ -9,10 +10,14 @@ const Authors = sequelize.define('authors', {
         allowNull:false,
         primaryKey:true
 
+
     },
     name:{
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:false,
+        unique:true,
+    
+        
     },
     birth_year:{
         type:DataTypes.INTEGER,

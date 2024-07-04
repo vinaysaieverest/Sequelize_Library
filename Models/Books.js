@@ -1,6 +1,7 @@
 const sequelize = require('../dbConfiguration')
 const {DataTypes} = require('sequelize');
 const authors = require('./Authors');
+const { timeStamp } = require('console');
 
 const Books = sequelize.define('books', {
     id:{
@@ -12,11 +13,11 @@ const Books = sequelize.define('books', {
     },
     titles:{
         type:DataTypes.STRING,
-        allowNull:true
+        allowNull:false
     },
     authorId:{
         type:DataTypes.INTEGER,
-        allowNull:true,
+        allowNull:false,
         references:{
       
             model:authors,
@@ -38,6 +39,8 @@ const Books = sequelize.define('books', {
         allowNull:false
 
     }
-
-})
+    
+});
+authors.hasMany(Books, { foreignKey: 'authorId' });
+Books.belongsTo(authors, { foreignKey: 'authorId' });
 module.exports = Books;

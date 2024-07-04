@@ -14,16 +14,15 @@ const vinaysai = async()=>{
   console.log("conncetion established");
   await sequelize.sync({force:true});
   console.log("data base created ");
-
+     
+    
     await authors.bulkCreate(authorsData);
     await books.bulkCreate(booksData);
     await members.bulkCreate(membersData);
     await loans.bulkCreate(loansData);
     await reservations.bulkCreate(reservationsData);
     console.log("data inserted sucessfully");
-      const allLoans = await loans.findAll();
-       console.log("Loans Table Contents:");
-       console.table(allLoans.map(loan => loan.toJSON()))
+  
 }
 catch (error) {
   console.error('Unable to connect to the database:', error);
