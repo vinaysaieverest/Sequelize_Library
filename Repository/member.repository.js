@@ -1,4 +1,4 @@
-// CRUD Operations for Books
+// CRUD Operations for Members
 const { where } = require('sequelize');
 const members = require('../Models/Members');
 // const {authorsData} = require('../Data');
@@ -10,7 +10,7 @@ const membersData1 = {
 }
 const create  =  async()=>{
     try{
-        await members.create(authorsData1);
+        await members.create(membersData1);
         const a =  await members.findAll();
         console.table(a.map(b =>b.toJSON()))
         console.log("DATA CREATED");
@@ -73,7 +73,7 @@ const delete_data = async()=>{
 
 
 
-create();
+// create();
 read();
-update();
-delete_data();
+// update();
+// delete_data();

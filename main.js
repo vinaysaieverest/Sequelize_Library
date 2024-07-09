@@ -1,11 +1,30 @@
 const { DataTypes } = require('sequelize');
+const express = require('express');
+const app = express();
 const sequelize = require('./dbConfiguration')
 const authors = require('./Models/Authors');
 const books = require('./Models/Books');
 const members = require('./Models/Members');
 const loans = require('./Models/Loans');
 const reservations = require('./Models/Reservations');
+const authorRoutes = require('./Routes/authors.routes');
+const booksRoutes = require('./Routes/book.routes');
+const memberRoutes = require('./Routes/member.routes');
+const reservationRoutes = require('./Routes/reservations.routes');
+const loanRoutes = require('./Routes/loan.routes');
+const Authors_q = require('./Queries/Author.queries')
+const _q = require('./Queries/Author.queries')
+const Authors_q = require('./Queries/Author.queries')
+const Authors_q = require('./Queries/Author.queries')
+const Authors_q = require('./Queries/Author.queries')
 const { authorsData, booksData, membersData, loansData, reservationsData } = require('./Data');
+
+
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); 
+
 
 // Create a new Sequelize instance
 const vinaysai = async()=>{
@@ -29,5 +48,46 @@ catch (error) {
 }
 
 }
+app.use('/api/ping', ((req, res) => {  
+  res.json({ message: 'pong' });
+}));
+
+
+
+const CRUD = async()=>{
+  try{
+    app.use('/api/authors',authorRoutes);
+app.use('/api/loans',loanRoutes);
+app.use('/api/members',memberRoutes);
+app.use('/api/reservations',reservationRoutes);
+app.use('/api/books',booksRoutes);
+
+
+  }
+  catch(error){
+    console.error(error)
+  }
+
+}
+
+const Queries = async()=>{
+  try{
+    app.use('/api/authors',Authors_q)
+  }
+  catch(error){
+    console.error(error)
+  }
+}
+
+
+
+
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+console.log(`Server is running on port ${PORT}`);
+});
 vinaysai();
+// CRUD();
+Queries();
 module.exports = { vinaysai };

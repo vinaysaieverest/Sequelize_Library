@@ -1,13 +1,9 @@
-// CRUD Operations for Books
+// CRUD Operations for Reservation
 const { where } = require('sequelize');
 const reservation = require('../Models/Reservations');
 // const {authorsData} = require('../Data');
 const reservationData1 = {
-    titles:'Think out side',
-    authorId: 3,
-     genre: 'Fantasy',
-      isbn: '97807475371323', 
-      publication_year: '2002'
+    member_id: 1, book_id:2, reservation_date: new Date()
 }
 
 const create  =  async()=>{
@@ -60,7 +56,7 @@ const delete_data = async()=>{
     try{
         const reservation6 = await reservation.findByPk(3);
         if (reservation6) {
-            await reservation.destroy({ where: { id: 3} });
+            await reservation.destroy({ where: { id: 4} });
             const updatedReservation = await reservation.findAll();
             console.table( updatedReservation.map(a=>a.toJSON()));
         } else {

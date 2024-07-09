@@ -1,4 +1,4 @@
-// CRUD Operations for Books
+// CRUD Operations for Loans
 const { where } = require('sequelize');
 const loans = require('../Models/Loans');
 // const {authorsData} = require('../Data');

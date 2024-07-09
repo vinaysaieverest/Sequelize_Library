@@ -3,7 +3,7 @@ const { where } = require('sequelize');
 const authors = require('../Models/Authors');
 // const {authorsData} = require('../Data');
 const authorsData1 = {
-    name:'sai pavan',
+    name:'Rama krishna',
     birth_year:2002,
     nationality:'India'
 }

@@ -41,6 +41,7 @@ const Books = sequelize.define('books', {
     }
     
 });
+
 authors.hasMany(Books, { foreignKey: 'authorId' });
 Books.belongsTo(authors, { foreignKey: 'authorId' });
 module.exports = Books;
