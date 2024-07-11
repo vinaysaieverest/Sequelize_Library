@@ -36,10 +36,20 @@ const Loans = sequelize.define('loans', {
     due_date:{
         type:DataTypes.DATE,
         allowNull:false
-    }
+    }},
+    {   tableName:'Loans',
+        indexes:[
+            {
+                unique:true,
+                fields:['id']
+            }
+        ]
     
 
-})
+
+    
+});
+
 books.hasMany(Loans, { foreignKey: 'book_id' });
 Loans.belongsTo(books, { foreignKey: 'book_id' });
 

@@ -38,8 +38,14 @@ const Books = sequelize.define('books', {
         type:DataTypes.STRING,
         allowNull:false
 
-    }
-    
+    }},
+    {   tableName:'Books',
+        indexes:[
+            {
+                unique:true,
+                fields:['titles']
+            }
+        ]
 });
 
 authors.hasMany(Books, { foreignKey: 'authorId' });

@@ -32,11 +32,16 @@ const Reservation  = sequelize.define('reservation', {
         type:DataTypes.DATE,
         allowNull:false
 
-    },
-   
-    
+    }},
+    {   tableName:'Reservations',
+        indexes:[
+            {
+                unique:true,
+                fields:['id']
+            }
+        ]
+});
 
-})
 books.hasMany(Reservation, { foreignKey: 'book_id' });
 Reservation.belongsTo(books, { foreignKey: 'book_id' });
 members.hasMany(Reservation, { foreignKey: 'member_id' });

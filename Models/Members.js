@@ -26,8 +26,18 @@ const Members = sequelize.define('members', {
     email:{
         type:DataTypes.STRING,
         unique:true
-    }
+    }},
+    {   tableName:'Members',
+        indexes:[
+            {
+                unique:true,
+                fields:['id']
+            }
+        ]
     
 
-})
+
+    
+});
+
 module.exports = Members;

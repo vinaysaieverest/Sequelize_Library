@@ -27,6 +27,14 @@ const Authors = sequelize.define('authors', {
         type:DataTypes.STRING,
         allowNull:false
 
-    }
+    }},{   tableName:'Authors',
+        indexes:[
+            {
+                unique:true,
+                fields:['name']
+            }
+        ]
+    
+
 });
 module.exports = Authors;
