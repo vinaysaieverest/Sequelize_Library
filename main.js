@@ -15,6 +15,8 @@ const loanRoutes = require('./Routes/loan.routes');
 const Authors_q = require('./Queries/Author.queries')
 const Loans_q = require('./Queries/loan.queries')
 const members_q = require('./Queries/members.queires')
+const loan_a_book = require('./Transactions/Loan_reservation')
+
 // const Authors_q = require('./Queries/Author.queries')
 // const Authors_q = require('./Queries/Author.queries')
 const { authorsData, booksData, membersData, loansData, reservationsData } = require('./Data');
@@ -71,6 +73,7 @@ const Queries = async () => {
     app.use('/api/authors', Authors_q),
     app.use('/api/loans', Loans_q),
     app.use('/api/member/',members_q);
+    app.use('/api/loan_a_book',loan_a_book)
 
 
   }

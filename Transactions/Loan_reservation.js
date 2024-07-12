@@ -1,5 +1,9 @@
+const express = require('express');
+const Sequelize = require('../dbConfiguration')
 const Loans = require('../Models/Loans');
 const Reservation = require('../Models/Reservations')
+const router = express.Router();
+const { Op } = require('sequelize');
 
 
 router.get('/:id/:member_id', async (req, res) => {
@@ -24,7 +28,7 @@ router.get('/:id/:member_id', async (req, res) => {
         }
 
         // Start a transaction
-        const result = await sequelize.transaction(async (t) => {
+        const result = await Sequelize.transaction(async (t) => {
             // Create a loan record
             await Loans.create({
                 member_id: members_id,
@@ -32,7 +36,7 @@ router.get('/:id/:member_id', async (req, res) => {
                 loan_date: new Date(), // Adjust as necessary
                 due_date: new Date(new Date().setDate(new Date().getDate() + 14)) // Example: 2 weeks from now
             }, { transaction: t });
-            cons
+            
 
             // Delete the reservation
             await Reservation.destroy({
