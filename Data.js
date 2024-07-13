@@ -20,7 +20,10 @@ const booksData = [
   
   const membersData = [
     { name: 'John Doe', address: '123 Main St, Anytown', phone_number: 555-1234, email: 'john.doe@example.com' },
-    { name: 'Jane Smith', address: '456 Oak Ave, Another Town', phone_number: 555-5678, email: 'jane.smith@example.com' }
+    { name: 'Jane Smith', address: '456 Oak Ave, Another Town', phone_number: 555-5678, email: 'jane.smith@example.com' },
+    { name: 'Vinay sai ', address: 'Hanamkonda Warangal', phone_number: 950-70101, email: 'vinaysai.@gmail.com' },
+    { name: 'Bharath', address: 'Basar Nizambad', phone_number: 123-9876, email: 'bharath123@gmail.com' },
+    { name: 'Shivani', address: 'Jangam', phone_number: 298-1234, email: 'shivani123@gmail.com' }
   ];
   
   const loansData = [
@@ -29,8 +32,12 @@ const booksData = [
   ];
   
   const reservationsData = [
-    { member_id: 1, book_id: 2, reservation_date: new Date() },
-    { member_id: 2, book_id: 4, reservation_date: new Date() }
+    { member_id: 1, book_id: 2, reservation_date: new Date('2024-07-10') },
+    { member_id: 2, book_id: 4, reservation_date: new Date('2024-07-11') },
+    { member_id: 3, book_id: 2, reservation_date: new Date('2024-07-12') },
+    { member_id: 4, book_id: 2, reservation_date: new Date('2024-07-13') },
+
+    
   ];
 
   module.exports = {
